@@ -11,11 +11,12 @@
  * Object: <type>Controller		Location: APPROOT/app/sections/controllers/<type>.js
  * HTML							Location: APPROOT/app/sections/html/<type>.html
  */
-var SpazSection = function (args) {
+var SpazSection = function (id, args, window) {
 	// constructor
 	
-	
-	this.type = args.type;
+	this.id     = id          || null;
+	this.window = window      || null;
+	this.type   = args.type   || throw new Error('Cannot create a section without a type');
 	
 	/*
 		set some paths
